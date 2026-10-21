@@ -1,0 +1,34 @@
+{
+  "colors": {
+    "yellow": "#FDB515",
+    "cream": "#FFF9ED",
+    "ink": "#171717",
+    "muted": "#73716C",
+    "border": "#E7E1D6",
+    "white": "#FFFFFF"
+  },
+  "fonts": {
+    "headings": "Plus Jakarta Sans",
+    "body": "Inter"
+  },
+  "widths": {
+    "desktop": 1440,
+    "content": 1200,
+    "mobile": 390
+  },
+  "spacing": [
+    8,
+    12,
+    16,
+    24,
+    32,
+    48,
+    64,
+    80
+  ],
+  "radius": {
+    "button": 12,
+    "card": 18,
+    "panel": 24
+  }
+}

@@ -1,0 +1,135 @@
+[
+  {
+    "id": "classic-burger",
+    "title": "Classic Rush Burger",
+    "description": "Beef patty, cheddar, crisp lettuce, tomato, and house sauce on a toasted bun.",
+    "price": 8.5,
+    "image": "burger",
+    "service": "food",
+    "vendor": "rush-burger",
+    "category": "Burgers"
+  },
+  {
+    "id": "double-burger",
+    "title": "Double Rush Burger",
+    "description": "Two patties, double cheddar, pickles, and a little extra house sauce.",
+    "price": 11,
+    "image": "burger",
+    "service": "food",
+    "vendor": "rush-burger",
+    "category": "Burgers"
+  },
+  {
+    "id": "garden-burger",
+    "title": "Garden Rush Burger",
+    "description": "A veggie patty, fresh greens, tomato, and a tangy herb sauce.",
+    "price": 9.5,
+    "image": "burger",
+    "service": "food",
+    "vendor": "rush-burger",
+    "category": "Burgers"
+  },
+  {
+    "id": "golden-fries",
+    "title": "Golden Fries",
+    "description": "Crispy golden fries with a sprinkle of sea salt.",
+    "price": 3.5,
+    "image": "fries",
+    "service": "food",
+    "vendor": "rush-burger",
+    "category": "Sides"
+  },
+  {
+    "id": "cheese-pizza",
+    "title": "Campus Cheese Pizza",
+    "description": "Classic mozzarella and tomato sauce on a golden crust.",
+    "price": 10,
+    "image": "pizza",
+    "service": "food",
+    "vendor": "campus-slice",
+    "category": "Pizza"
+  },
+  {
+    "id": "garden-bowl",
+    "title": "Garden Grain Bowl",
+    "description": "Grains, greens, chickpeas, and a bright lemon dressing.",
+    "price": 9,
+    "image": "bowl",
+    "service": "food",
+    "vendor": "green-bowl",
+    "category": "Bowls"
+  },
+  {
+    "id": "iced-coffee",
+    "title": "Iced Coffee",
+    "description": "Cold coffee, plenty of ice, and your choice of milk.",
+    "price": 3.5,
+    "image": "coffee",
+    "service": "food",
+    "vendor": "study-break-cafe",
+    "category": "Drinks"
+  },
+  {
+    "id": "snack-pack",
+    "title": "Campus Snack Pack",
+    "description": "A mix of sweet and savory snacks for a long study session.",
+    "price": 6,
+    "image": "groceries",
+    "service": "grocery",
+    "vendor": "campus-pantry",
+    "category": "Snacks"
+  },
+  {
+    "id": "fruit-bag",
+    "title": "Fresh Fruit Bag",
+    "description": "A small selection of apples, bananas, and seasonal fruit.",
+    "price": 5,
+    "image": "fruit",
+    "service": "grocery",
+    "vendor": "campus-pantry",
+    "category": "Produce"
+  },
+  {
+    "id": "pantry-kit",
+    "title": "Pantry Essentials",
+    "description": "Pasta, sauce, and a few dependable cupboard staples.",
+    "price": 12,
+    "image": "groceries",
+    "service": "grocery",
+    "vendor": "campus-pantry",
+    "category": "Pantry"
+  },
+  {
+    "id": "calculator",
+    "title": "Scientific Calculator",
+    "description": "A scientific calculator for your next class or study session.",
+    "price": 0,
+    "image": "calculator",
+    "service": "supply",
+    "vendor": "student-center",
+    "category": "Calculators",
+    "available": true
+  },
+  {
+    "id": "study-kit",
+    "title": "Study Kit",
+    "description": "A ruler, pens, and reusable study materials in one handy kit.",
+    "price": 0,
+    "image": "study-kit",
+    "service": "supply",
+    "vendor": "student-center",
+    "category": "Study tools",
+    "available": true
+  },
+  {
+    "id": "lab-goggles",
+    "title": "Lab Goggles",
+    "description": "Protective goggles for your lab class.",
+    "price": 0,
+    "image": "goggles",
+    "service": "supply",
+    "vendor": "student-center",
+    "category": "Lab essentials",
+    "available": false
+  }
+]
