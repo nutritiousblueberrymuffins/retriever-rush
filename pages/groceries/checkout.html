@@ -1,0 +1,57 @@
+<!-- Author:Karen Wu -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Checkout - Retriever Rush</title>
+  <link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body>
+
+  <header>
+    <a class="logo" href="../../index.html">Retriever Rush</a>
+    <nav>
+      <a href="cart.html">Cart</a>
+      <a href="../login.html">Log in</a>
+    </nav>
+  </header>
+
+  <div class="title-bar">
+    <h1>Checkout</h1>
+  </div>
+  
+  <main>
+    <form action="confirmation.html">
+      <h2>Delivery Information</h2>
+      <label for="location">Delivery location</label>
+      <input type="text" id="location" placeholder="Enter address or select location">
+      <label for="time">Preferred delivery time</label>
+      <select id="time">
+        <option>Select time</option>
+        <option>10:00 AM - 12:00 PM</option>
+        <option>12:00 PM - 2:00 PM</option>
+        <option>2:00 PM - 4:00 PM</option>
+      </select>
+
+      <label for="notes">Special instructions (optional)</label>
+      <input type="text" id="notes" placeholder="Leave at front desk...">
+      <h2>Payment Information</h2>
+
+      <label for="card">Card number</label>
+      <input type="text" id="card" placeholder="1234 5678 9012 3456">
+
+      <label for="expiration">Expiration date</label>
+      <input type="text" id="expiration" placeholder="MM/YY">
+
+      <label for="cvv">CVV</label>
+      <input type="text" id="cvv" placeholder="123">
+
+      <button class="button button-dark" type="submit">Place Order</button>
+    </form>
+  </main>
+  <footer>
+    <p>Retriever Rush - UMBC IS 448, Group 8</p>
+  </footer>
+</body>
+</html>
