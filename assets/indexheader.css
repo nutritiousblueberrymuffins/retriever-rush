@@ -1,8 +1,7 @@
 
 
 header {
-
-    font-family: Arial, sans-serif;
+    font-family: var(--heading-font);
     margin: 5px;
 }
 
@@ -20,7 +19,6 @@ header {
     /*misc */
     list-style-type: none;
     
-    
 }
 
 .list-of-navigations li a {
@@ -28,4 +26,82 @@ header {
     text-decoration: none;
     color: #333;
     font-weight: bold;
+}
+
+
+/* body part make seperate file later */
+
+.title-bar {
+    /*display layout type */
+
+    /*borderbox properties */
+    
+    /*misc */
+    background-color: #000000;
+    width: 100%;
+    height: 30px;
+}
+
+.title .subtitle {
+
+     /*display layout type */
+    display: inline-block;
+
+    /*misc */
+    background-color: #FDB515;
+    font-family: var(--heading-font);
+    font-size: 16px;
+
+
+}
+
+.content {
+
+    /*display layout type */
+    display: flex;
+    flex-direction: column;
+
+    /*borderbox properties */
+    width: 100%;
+    height: auto;
+
+    /*misc */
+    font-family: var(--heading-font);
+}
+
+.mascot-container {
+
+    /*display layout type */
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    /*borderbox properties */
+    width: 25ch;
+    height: 25ch;
+
+    /*misc */
+    margin-top: 20px;
+    
+}
+
+
+.circle {
+
+    position: grid;
+
+    width: 100%;
+    aspect-ratio: 1;
+    background-color: #FDB515;
+    border-radius: 50%;
+
+    z-index: 0;
+}
+
+.mascot-image {
+    z-index: 1;
+    width: 80%;
+    height: auto;
 }
