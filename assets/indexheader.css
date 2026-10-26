@@ -1,0 +1,31 @@
+
+
+header {
+
+    font-family: Arial, sans-serif;
+    margin: 5px;
+}
+
+.list-of-navigations {
+    /*display layout type */
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    /*borderbox properties */
+    width: 100%;
+    height: auto;
+    padding: 10px 20px;
+    
+    /*misc */
+    list-style-type: none;
+    
+    
+}
+
+.list-of-navigations li a {
+
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
