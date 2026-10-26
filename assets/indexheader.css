@@ -1,7 +1,6 @@
 
 
 header {
-
     font-family: Arial, sans-serif;
     margin: 5px;
 }
@@ -20,7 +19,6 @@ header {
     /*misc */
     list-style-type: none;
     
-    
 }
 
 .list-of-navigations li a {
@@ -28,4 +26,13 @@ header {
     text-decoration: none;
     color: #333;
     font-weight: bold;
+}
+
+git
+/* body part make seperate file later */
+
+.title-bar {
+    background-color: #000000;
+    width: 100%;
+    height: 30px;
 }
