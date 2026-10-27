@@ -1,0 +1,64 @@
+<!-- Author: Gabriela Jurado-Fuentes -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Tools · Student Market</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="indexheader.css">
+</head>
+<body>
+    <header class="main-header">
+        <a href="index.html" class="logo-btn">
+            <img src="assets/brand-mark.svg" alt="Retriever Rush Logo" width="32" height="32">
+            Retriever Rush
+        </a>
+        <nav class="top-nav">
+            <a href="index.html">Browse food</a>
+            <a href="supplies.html" class="active">Student Market</a>
+            <a href="checkout.html">
+                <img src="assets/bag.svg" alt="Bag Icon" width="20" height="20">
+            </a>
+        </nav>
+    </header>
+
+    <main class="container section">
+        <span class="eyebrow">STUDENT MARKET / STUDY TOOLS</span>
+        <h1 style="margin: 12px 0 20px;">Study tools and supplies.</h1>
+        <p>Rulers, pens, whiteboards, and reusable study bundles for your study sessions.</p>
+
+        <!--the search bar-->
+        <div class="form-card" style="margin: 24px 0 32px; display: flex; gap: 12px; align-items: center;">
+            <img src="assets/search.svg" alt="Search Icon" width="20" height="20">
+            <input placeholder="Search study tools..." style="flex: 1; border: none; outline: none;">
+            <button class="btn">Search</button>
+        </div>
+
+        <!-- again with the navigation menu-->
+        <div class="button-row" style="margin-bottom: 32px;">
+            <a href="supplies.html" class="btn btn-secondary">All</a>
+            <a href="calculators.html" class="btn btn-secondary">Calculators</a>
+            <a href="study-tools.html" class="btn">Study tools</a>
+            <a href="lab-supplies.html" class="btn btn-secondary">Lab essentials</a>
+        </div>
+
+        <!-- now the item on it. -->
+        <div class="catalog-grid">
+            <div class="catalog-card">
+                <div class="card-art">
+                    <img src="assets/study-kit.svg" alt="Study Kit" width="400" height="320">
+                </div>
+                <div class="card-content">
+                    <h2>Study Kit</h2>
+                    <p>A ruler, pens, and reusable study materials in one handy kit.</p>
+                    <div style="margin-top: 16px; display: flex; justify-content: space-between; align-items: center;">
+                        <span style="font-weight: 600;">Free to borrow</span>
+                        <a href="checkout.html" class="btn">Borrow →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
