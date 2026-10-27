@@ -1,0 +1,74 @@
+<!-- Author: Gabriela Jurado-Fuentes -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservation Confirmed · Retriever Rush</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="indexheader.css">
+</head>
+<body>
+    <header class="main-header">
+        <a href="index.html" class="logo-btn">
+            <img src="assets/brand-mark.svg" alt="Retriever Rush Logo" width="32" height="32">
+            Retriever Rush
+        </a>
+        <nav class="top-nav">
+            <a href="index.html">Browse food</a>
+            <a href="supplies.html" class="active">Student Market</a>
+            <a href="empty-supply.html">
+                <img src="assets/bag.svg" alt="Bag Icon" width="20" height="20">
+            </a>
+        </nav>
+    </header>
+
+    <main class="container section" style="max-width: 600px; margin: 40px auto; text-align: center;">
+        
+        <!-- thought it would be fun to put the mascot in-->
+        <img src="assets/mascot-celebrating.png" alt="Retriever Mascot Celebrating" width="160" height="160" style="margin-bottom: 24px;">
+
+        <span class="eyebrow" style="justify-content: center; display: flex; align-items: center; gap: 6px;">
+            <img src="assets/spark.svg" alt="Spark Icon" width="16" height="16">
+            RESERVATION CONFIRMED
+        </span>
+
+        <h1 style="margin: 12px 0 16px;">You're all set to pick up!</h1>
+        <p style="margin-bottom: 32px; color: #73716C;">
+            Your equipment loan reservation has been successfully processed. Show your physical Student ID at the pickup desk during your scheduled window.
+        </p>
+
+        <!--summary receipt  -->
+        <div class="form-card" style="text-align: left; margin-bottom: 32px;">
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 16px; border-bottom: 1px solid #E7E1D6; padding-bottom: 12px;">
+                <img src="assets/check.svg" alt="Check Icon" width="20" height="20">
+                <strong style="font-size: 1.1rem;">Reservation #RR-84920</strong>
+            </div>
+
+            <div style="display: grid; gap: 10px; font-size: 0.95rem;">
+                <p style="margin: 0; display: flex; justify-content: space-between;">
+                    <span style="color: #73716C;">Pickup Desk:</span>
+                    <strong>Student Center Desk (1st Floor)</strong>
+                </p>
+                <p style="margin: 0; display: flex; justify-content: space-between;">
+                    <span style="color: #73716C;">Maximum Loan Term:</span>
+                    <strong>3 Days</strong>
+                </p>
+                <p style="margin: 0; display: flex; justify-content: space-between;">
+                    <span style="color: #73716C;">Cost:</span>
+                    <strong>$0.00 (Free Loan)</strong> <!--this is for free loans -->
+                </p>
+            </div>
+        </div>
+
+        <!-- Return to Market Button -->
+        <div class="button-row" style="justify-content: center;">
+            <a href="supplies.html" class="btn">
+                Return to Student Market
+                <img src="assets/arrow.svg" alt="Arrow Right" width="16" height="16">
+            </a>
+        </div>
+
+    </main>
+</body>
+</html>
