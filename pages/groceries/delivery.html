@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Delivery Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>UMBC Online Grocery</h1>
+
+    <h2>Delivery Location</h2>
+
+    <form action="payment.html" method="get">
+        <label for="name">Enter Your Full Name: </label>
+        <input type="text" id="name" name="name" required>
+        <br/>
+
+        <label for="location">Delivery Location: </label>
+        <select id="location" name="location" required>
+            <option value="">Choose A Location For Delivery</option>
+            <option value="Dorm">Campus Dorms</option>
+            <option value="Apartment">Off-Campus apartment</option>
+            <option value="Other">Other Address</option>
+        </select><br/>
+
+        <label for="address">Street Address or Building: </label>
+        <input type="text" id="address" name="address" required>
+        <br/>
+
+        <label for="room">Room or Apartment Number: </label>
+        <input type="text" id="address" name="address">
+        <br/>
+
+        <label for="time">Preferred Delivery Time: </label>
+        <input type="number" id="time" name="time" min="1" max="12" placeholder="Hour" required>
+        <label for="minutes">:</label>
+        <input type="number" id="minutes" name="minutes" min="0" max="59" placeholder="minutes" required>
+        <select id="ampm" name="ampm" required>
+            <option value="">AM or PM</option>
+            <option value="AM">AM</option>
+            <option value="PM">PM</option>
+        </select>
+
+        <br/>
+
+        <input type="submit" value="Proceed to Payment">
+        <p><a href="groceries.html">Back to Groceries</a></p>
+        
+        
+        <br/>
+
+
+
+    </form>
+</body>
+</html>

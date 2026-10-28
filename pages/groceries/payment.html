@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Payment Page</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+
+        <h1>UMBC Online Groceries</h1>
+        <a href="login.html">Logout</a>
+
+        <h2>Payment Information</h2>
+
+        <h3>Order Summary:</h3>
+
+        <p>
+            Review your basket before placing order<br/>
+            Subtotal: To be determined<br/>
+            Delivery Fee: $3.00<br/>
+            <strong>Total: to be calculated</strong>
+
+        </p>
+
+        <form action="payment.html" method="get">
+            <h3>Select Payment Method: </h3>
+
+            <input type="radio" id="card" name="payment" value="Card" required>
+            <label for="card">Credit or Debit Card</label><br/>
+
+            <input type="radio" id="campuscard" name="payment" value="Campuscard">
+            <label for="campuscard">Campus Card Payment</label>
+            <br/>
+
+            <label for="cardname">Name on Card: </label>
+            <input type="text" id="cardname" name="cardname">
+            <br/>
+            
+            <label for="expiration">Expiration Date: </label>
+            <input type="month" id="expiration" name="expiration">
+            <br/>
+
+            <input type="submit" value="Place Order">
+
+            <p><a href="delivery.html">Back to Delivery</a></p>
+            <p><a href="groceries.html">Back to Groceries</a></p>
+
+        </form>
+
+
+    </body>
+</html>
