@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Supply Cart · Retriever Rush</title>
     <link rel="stylesheet" href="styles.css">
@@ -22,20 +22,23 @@
         </nav>
     </header>
 
-    <main class="container section" style="max-width: 960px; margin: 40px auto; padding: 0 20px;">
-        <span class="eyebrow" style="display: flex; align-items: center; gap: 6px;">
+    <div class="title-bar">
+        <h1>Your Supply Cart</h1>
+        <p class="subtitle">Review selected items before proceeding to checkout.</p>
+    </div>
+
+    <main class="container section">
+        <span class="eyebrow">
             <img src="assets/back.svg" alt="Back Arrow" width="14" height="14"> 
             STUDENT MARKET / YOUR CART
         </span>
-        <h1 style="margin: 12px 0 20px;">Your Supply Cart</h1>
-        <p style="margin-bottom: 32px;">Review selected items before proceeding to checkout.</p>
 
-        <div style="display: grid; grid-template-columns: 1fr 320px; gap: 24px; align-items: start;">
+        <div class="cart-layout">
             
             <!--a list of your cart items -->
             <!-- This one is when you are borrowing an item too. -->
             <!-- another item they are checking our, a study kit -->
-            <div id="cart-items-container" style="display: grid; gap: 16px;"></div>
+            <div id="cart-items-container" class="cart-items-list"></div>
 
             <!-- the summary of the sidebar with prices-->
             <div class="form-card" id="cart-summary-sidebar"></div>
