@@ -17,48 +17,73 @@
         <nav class="top-nav">
             <a href="index.html">Browse food</a>
             <a href="supplies.html" class="active">Student Market</a>
-            <a href="checkout.html">
+            <a href="cart-supply.html" class="cart-link">
                 <img src="assets/bag.svg" alt="Bag Icon" width="20" height="20">
+                <span class="cart-count-badge">0</span>
             </a>
         </nav>
     </header>
 
     <main class="container section">
-        <span class="eyebrow">STUDENT MARKET / STUDY TOOLS</span>
-        <h1 style="margin: 12px 0 20px;">Study tools and supplies.</h1>
-        <p>Rulers, pens, whiteboards, and reusable study bundles for your study sessions.</p>
+        <span class="eyebrow">
+            <img src="assets/back.svg" alt="Back" width="14" height="14">
+            STUDENT MARKET / STUDY TOOLS
+        </span>
+        <h1>Study tools and supplies.</h1>
+        <p class="subtitle">Rulers, pens, whiteboards, and reusable study bundles for your study sessions.</p>
 
         <!--the search bar-->
-        <div class="form-card" style="margin: 24px 0 32px; display: flex; gap: 12px; align-items: center;">
+        <div class="form-card search-card">
             <img src="assets/search.svg" alt="Search Icon" width="20" height="20">
-            <input placeholder="Search study tools..." style="flex: 1; border: none; outline: none;">
+            <input type="text" placeholder="Search study tools...">
             <button class="btn">Search</button>
         </div>
 
         <!-- again with the navigation menu-->
-        <div class="button-row" style="margin-bottom: 32px;">
-            <a href="supplies.html" class="btn btn-secondary">All</a>
-            <a href="calculators.html" class="btn btn-secondary">Calculators</a>
-            <a href="study-tools.html" class="btn">Study tools</a>
-            <a href="lab-supplies.html" class="btn btn-secondary">Lab essentials</a>
+        <div class="filter-bar">
+            <div class="button-row">
+                <a href="supplies.html" class="btn btn-secondary">All</a>
+                <a href="calculators.html" class="btn btn-secondary">Calculators</a>
+                <a href="study-tools.html" class="btn">Study tools</a>
+                <a href="lab-supplies.html" class="btn btn-secondary">Lab essentials</a>
+            </div>
         </div>
 
         <!-- now the item on it. -->
         <div class="catalog-grid">
             <div class="catalog-card">
                 <div class="card-art">
+                    <span class="badge">In Stock</span>
                     <img src="assets/study-kit.svg" alt="Study Kit" width="400" height="320">
                 </div>
                 <div class="card-content">
                     <h2>Study Kit</h2>
                     <p>A ruler, pens, and reusable study materials in one handy kit.</p>
-                    <div style="margin-top: 16px; display: flex; justify-content: space-between; align-items: center;">
-                        <span style="font-weight: 600;">Free to borrow</span>
-                        <a href="checkout.html" class="btn">Borrow →</a>
+                    
+                    <div class="card-actions">
+                        <div class="action-row">
+                            <span class="option-label">Free Loan</span>
+                            <button type="button" onclick="addToCart('study-kit', 'Study Kit Bundle', 0.00, 'borrow', 'assets/study-kit.svg')" class="btn btn-secondary btn-sm">
+                                Borrow Free →
+                            </button>
+                        </div>
+                        <div class="action-row">
+                            <span class="price-text">$4.99 to buy</span>
+                            <button type="button" onclick="addToCart('study-kit', 'Study Kit Bundle', 4.99, 'buy', 'assets/study-kit.svg')" class="btn btn-sm">
+                                Buy $4.99
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </main>
+
+    <script src="supply-cart.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', updateCartBadge);
+    </script>
+</body>
+</html>
 </body>
 </html>
