@@ -9,61 +9,52 @@
     <link rel="stylesheet" href="indexheader.css">
 </head>
 <body>
-    <header class="main-header">
-      html  <a href="index.html" class="logo-btn">
-            <img src="assets/brand-mark.svg" alt="Retriever Rush Logo" width="32" height="32">
-            Retriever Rush
-        </a>
-        <nav class="top-nav">
-            <header>
-                <nav>
-                    <ul class="list-of-navigations">
-                        <li><a href="index.html">Retriever Rush</a></li>
-                        <li><a href="menu.html">Browse Food</a></li>
-                        <li><a href="supplies.html" class="active">Student Market</a></li>
-                        <li><a href="login.html">Login</a></li>
-                        <li><a href="signup.html">Sign Up</a></li>
-                        <li><a href="cart-supply.html">Cart (<span class="cart-count-badge">0</span>)</a></li>
-                    </ul>
-                </nav>
-            </header>
-        </a>
+    <header>
+        <nav>
+            <ul class="list-of-navigations">
+                <li><a href="index.html">Retriever Rush</a></li>
+                <li><a href="menu.html">Browse Food</a></li>
+                <li><a href="supplies.html" class="active">Student Market</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="signup.html">Sign Up</a></li>
+                <li><a href="cart-supply.html">Cart (<span class="cart-count-badge">0</span>)</a></li>
+            </ul>
         </nav>
     </header>
 
-    <main class="container section checkout-container">
-        <span class="eyebrow">
+    <main class="container section" style="max-width: 760px; margin: 0 auto; padding: 40px 20px;">
+        <span class="eyebrow" style="display: flex; align-items: center; gap: 6px;">
             <img src="assets/back.svg" alt="Back Arrow" width="14" height="14"> 
             STUDENT MARKET / CHECKOUT
         </span>
-        <h1>Equipment & Supply Checkout</h1>
-        <p class="subtitle">Review your auto-filled account information and accept the equipment disclaimer to place your order.</p>
+        <h1 style="margin: 12px 0 20px;">Equipment & Supply Checkout</h1>
+        <p style="margin-bottom: 32px;">Review your auto-filled account information and accept the equipment disclaimer to place your order.</p>
 
         <form action="confirmation-supply.html" method="GET">
             
             <!-- Student input into or auto fill with logged in -->
-            <div class="form-card">
-                <div class="card-header-row">
-                    <h2>
+            <div class="form-card" style="margin-bottom: 24px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+                    <h2 style="display: flex; align-items: center; gap: 8px; margin: 0;">
                         <img src="assets/user.svg" alt="User Icon" width="20" height="20">
                         1. Student Identification
                     </h2>
-                    <span class="badge-status">
+                    <span style="font-size: 0.8rem; background: #FFF9ED; border: 1px solid #E7E1D6; padding: 4px 10px; border-radius: 12px; color: #73716C;">
                         Logged In (Auto-filled)
                     </span>
                 </div>
                 
-                <div class="form-group">
+                <div style="margin-bottom: 16px;">
                     <label for="fullName">Full Name</label>
                     <input id="fullName" name="fullName" type="text" value="Alex Retriever" required>
                 </div>
 
-                <div class="form-group">
+                <div style="margin-bottom: 16px;">
                     <label for="studentId">Campus Student ID Number</label>
                     <input id="studentId" name="studentId" type="text" pattern="[A-Za-z0-9]{7,10}" value="AB12345" required>
                 </div>
 
-                <div class="form-group">
+                <div>
                     <label for="email">Student Email Address</label>
                     <input id="email" name="email" type="email" value="alexr1@umbc.edu" required>
                 </div>
@@ -73,34 +64,34 @@
             <!-- Loan Item -->
             <!-- buying an item-->
             <!-- total amount -->
-            <div class="form-card">
-                <h2>
+            <div class="form-card" style="margin-bottom: 24px;">
+                <h2 style="display: flex; align-items: center; gap: 8px; margin-bottom: 16px;">
                     <img src="assets/grid.svg" alt="Grid Icon" width="20" height="20">
                     2. Selected Items & Order Breakdown
                 </h2>
                 
-                <ul id="checkout-items-list" class="checkout-list"></ul>
+                <ul id="checkout-items-list" style="list-style: none; padding: 0; margin: 0;"></ul>
 
-                <div id="checkout-total-box" class="total-box"></div>
+                <div id="checkout-total-box" style="margin-top: 16px; background: #FFF9ED; padding: 12px 16px; border-radius: 8px; border: 1px solid #E7E1D6; display: flex; justify-content: space-between; align-items: center;"></div>
             </div>
 
             <!--damage and loss policy agreement -->
-            <div class="form-card">
-                <h2>
+            <div class="form-card" style="margin-bottom: 32px;">
+                <h2 style="display: flex; align-items: center; gap: 8px; margin-bottom: 16px;">
                     <img src="assets/shield.svg" alt="Shield Icon" width="20" height="20">
                     3. Damage & Loss Policy Agreement
                 </h2>
                 
-                <div class="policy-box">
-                    <ul>
+                <div style="background: #FFF9ED; border: 1px solid #E7E1D6; border-radius: 8px; padding: 16px; margin-bottom: 16px; font-size: 0.9rem;">
+                    <ul style="margin: 0; padding-left: 20px; line-height: 1.6;">
                         <li><strong>Equipment Care (Loans):</strong> Inspect borrowed items upon pickup at the Student Center Desk. You are responsible for returning borrowed items in good condition within 3 days.</li>
                         <li><strong>Damaged Equipment:</strong> Broken or non-working borrowed equipment will result in repair or replacement costs billed to your student account.</li>
                         <li><strong>Purchased Items:</strong> Store purchases are final and added to your campus billing summary.</li>
                     </ul>
                 </div>
 
-                <label class="checkbox-label">
-                    <input type="checkbox" id="agreeTerms" name="agreeTerms" required>
+                <label style="display: flex; align-items: flex-start; gap: 10px; cursor: pointer;">
+                    <input type="checkbox" id="agreeTerms" name="agreeTerms" required style="margin-top: 4px;">
                     <span>I have read and agree to the damage/loss terms and commit to returning borrowed items in good condition.</span>
                 </label>
             </div>
@@ -118,6 +109,10 @@
         </form>
     </main>
 
+    <footer>
+        <p>Retriever Rush - UMBC IS 448, Group 8</p>
+    </footer>
+
     <script src="supply-cart.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -126,4 +121,5 @@
         });
     </script>
 </body>
+</html>
 </html>
