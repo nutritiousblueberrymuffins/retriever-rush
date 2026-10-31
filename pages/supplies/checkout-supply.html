@@ -17,105 +17,89 @@
         <nav class="top-nav">
             <a href="index.html">Browse food</a>
             <a href="supplies.html" class="active">Student Market</a>
-            <a href="cart-supply.html">
+            <a href="cart-supply.html" class="cart-link">
                 <img src="assets/bag.svg" alt="Bag Icon" width="20" height="20">
+                <span class="cart-count-badge">0</span>
             </a>
         </nav>
     </header>
 
-    <main class="container section" style="max-width: 760px; margin: 0 auto; padding: 40px 20px;">
-        <span class="eyebrow" style="display: flex; align-items: center; gap: 6px;">
+    <main class="container section checkout-container">
+        <span class="eyebrow">
             <img src="assets/back.svg" alt="Back Arrow" width="14" height="14"> 
             STUDENT MARKET / CHECKOUT
         </span>
-        <h1 style="margin: 12px 0 20px;">Equipment & Supply Checkout</h1>
-        <p style="margin-bottom: 32px;">Review your auto-filled account information and accept the equipment disclaimer to place your order.</p>
+        <h1>Equipment & Supply Checkout</h1>
+        <p class="subtitle">Review your auto-filled account information and accept the equipment disclaimer to place your order.</p>
 
         <form action="confirmation-supply.html" method="GET">
             
             <!-- Student input into or auto fill with logged in -->
-            <div class="form-card" style="margin-bottom: 24px;">
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
-                    <h2 style="display: flex; align-items: center; gap: 8px; margin: 0;">
+            <div class="form-card">
+                <div class="card-header-row">
+                    <h2>
                         <img src="assets/user.svg" alt="User Icon" width="20" height="20">
                         1. Student Identification
                     </h2>
-                    <span style="font-size: 0.8rem; background: #FFF9ED; border: 1px solid #E7E1D6; padding: 4px 10px; border-radius: 12px; color: #73716C;">
+                    <span class="badge-status">
                         Logged In (Auto-filled)
                     </span>
                 </div>
                 
-                <div style="margin-bottom: 16px;">
+                <div class="form-group">
                     <label for="fullName">Full Name</label>
                     <input id="fullName" name="fullName" type="text" value="Alex Retriever" required>
                 </div>
 
-                <div style="margin-bottom: 16px;">
+                <div class="form-group">
                     <label for="studentId">Campus Student ID Number</label>
                     <input id="studentId" name="studentId" type="text" pattern="[A-Za-z0-9]{7,10}" value="AB12345" required>
                 </div>
 
-                <div>
+                <div class="form-group">
                     <label for="email">Student Email Address</label>
                     <input id="email" name="email" type="email" value="alexr1@umbc.edu" required>
                 </div>
             </div>
 
             <!-- summary of items -->
-            <div class="form-card" style="margin-bottom: 24px;">
-                <h2 style="display: flex; align-items: center; gap: 8px; margin-bottom: 16px;">
+            <!-- Loan Item -->
+            <!-- buying an item-->
+            <!-- total amount -->
+            <div class="form-card">
+                <h2>
                     <img src="assets/grid.svg" alt="Grid Icon" width="20" height="20">
                     2. Selected Items & Order Breakdown
                 </h2>
                 
-                <ul style="list-style: none; padding: 0; margin: 0;">
-                    <!-- Loan Item -->
-                    <li style="display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #E7E1D6;">
-                        <div>
-                            <strong>Scientific Calculator</strong>
-                            <div style="font-size: 0.8rem; color: #73716C;">Free Loan · Return within 3 days</div>
-                        </div>
-                        <strong style="color: #171717;">Free Loan ($0.00)</strong>
-                    </li>
-                    <!-- buying an item-->
-                    <li style="display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #E7E1D6;">
-                        <div>
-                            <strong>Study Kit Bundle</strong>
-                            <div style="font-size: 0.8rem; color: #73716C;">Store Purchase · Yours to keep</div>
-                        </div>
-                        <strong style="color: #171717;">$4.99</strong>
-                    </li>
-                </ul>
+                <ul id="checkout-items-list" class="checkout-list"></ul>
 
-                <!-- total amount -->
-                <div style="margin-top: 16px; background: #FFF9ED; padding: 12px 16px; border-radius: 8px; border: 1px solid #E7E1D6; display: flex; justify-content: space-between; align-items: center;">
-                    <span style="font-weight: 600;">Total Due at Pickup/Checkout:</span>
-                    <strong style="font-size: 1.1rem; color: #171717;">$5.29 <small style="font-weight: normal; font-size: 0.75rem; color: #73716C;">(incl. tax)</small></strong>
-                </div>
+                <div id="checkout-total-box" class="total-box"></div>
             </div>
 
             <!--damage and loss policy agreement -->
-            <div class="form-card" style="margin-bottom: 32px;">
-                <h2 style="display: flex; align-items: center; gap: 8px; margin-bottom: 16px;">
+            <div class="form-card">
+                <h2>
                     <img src="assets/shield.svg" alt="Shield Icon" width="20" height="20">
                     3. Damage & Loss Policy Agreement
                 </h2>
                 
-                <div style="background: #FFF9ED; border: 1px solid #E7E1D6; border-radius: 8px; padding: 16px; margin-bottom: 16px; font-size: 0.9rem;">
-                    <ul style="margin: 0; padding-left: 20px; line-height: 1.6;">
+                <div class="policy-box">
+                    <ul>
                         <li><strong>Equipment Care (Loans):</strong> Inspect borrowed items upon pickup at the Student Center Desk. You are responsible for returning borrowed items in good condition within 3 days.</li>
                         <li><strong>Damaged Equipment:</strong> Broken or non-working borrowed equipment will result in repair or replacement costs billed to your student account.</li>
                         <li><strong>Purchased Items:</strong> Store purchases are final and added to your campus billing summary.</li>
                     </ul>
                 </div>
 
-                <label style="display: flex; align-items: flex-start; gap: 10px; cursor: pointer;">
-                    <input type="checkbox" id="agreeTerms" name="agreeTerms" required style="margin-top: 4px;">
+                <label class="checkbox-label">
+                    <input type="checkbox" id="agreeTerms" name="agreeTerms" required>
                     <span>I have read and agree to the damage/loss terms and commit to returning borrowed items in good condition.</span>
                 </label>
             </div>
 
             <!--action buttons-->
+            <!--confirming their order.-->
             <div class="button-row">
                 <button type="submit" class="btn">
                     Confirm & Reserve Order 
@@ -126,6 +110,13 @@
 
         </form>
     </main>
+
+    <script src="supply-cart.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            updateCartBadge();
+            renderCheckoutPage();
+        });
+    </script>
 </body>
-</html>
 </html>
