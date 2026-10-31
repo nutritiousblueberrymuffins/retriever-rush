@@ -9,48 +9,43 @@
     <link rel="stylesheet" href="indexheader.css">
 </head>
 <body>
-    <header class="main-header">
-        <a href="index.html" class="logo-btn">
-            <img src="assets/brand-mark.svg" alt="Retriever Rush Logo" width="32" height="32">
-            Retriever Rush
-        </a>
-        <nav class="top-nav">
-            <header>
-               <nav>
-                   <ul class="list-of-navigations">
-                       <li><a href="index.html">Retriever Rush</a></li>
-                       <li><a href="menu.html">Browse Food</a></li>
-                       <li><a href="supplies.html" class="active">Student Market</a></li>
-                       <li><a href="login.html">Login</a></li>
-                       <li><a href="signup.html">Sign Up</a></li>
-                       <li><a href="cart-supply.html">Cart (<span class="cart-count-badge">0</span>)</a></li>
-                   </ul>
-               </nav>
-            </header>
-        </a>
+    <header>
+        <nav>
+            <ul class="list-of-navigations">
+                <li><a href="index.html">Retriever Rush</a></li>
+                <li><a href="menu.html">Browse Food</a></li>
+                <li><a href="supplies.html">Student Market</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="signup.html">Sign Up</a></li>
+                <li><a href="cart-supply.html" class="active">Cart (<span class="cart-count-badge">0</span>)</a></li>
+            </ul>
         </nav>
     </header>
 
-    <main class="container section">
-        <span class="eyebrow">
+    <main class="container section" style="max-width: 960px; margin: 40px auto; padding: 0 20px;">
+        <span class="eyebrow" style="display: flex; align-items: center; gap: 6px;">
             <img src="assets/back.svg" alt="Back Arrow" width="14" height="14"> 
             STUDENT MARKET / YOUR CART
         </span>
-        <h1>Your Supply Cart</h1>
-        <p class="subtitle">Review selected items before proceeding to checkout.</p>
+        <h1 style="margin: 12px 0 20px;">Your Supply Cart</h1>
+        <p style="margin-bottom: 32px;">Review selected items before proceeding to checkout.</p>
 
-        <div class="cart-layout">
+        <div style="display: grid; grid-template-columns: 1fr 320px; gap: 24px; align-items: start;">
             
-            <!--a list of cart items -->
+            <!--a list of your cart items -->
             <!-- This one is when you are borrowing an item too. -->
-            <!-- another item they are checking out, a study kit -->
-            <div id="cart-items-container" class="cart-items-list"></div>
+            <!-- another item they are checking our, a study kit -->
+            <div id="cart-items-container" style="display: grid; gap: 16px;"></div>
 
-            <!--summary of the sidebar with prices-->
+            <!-- the summary of the sidebar with prices-->
             <div class="form-card" id="cart-summary-sidebar"></div>
 
         </div>
     </main>
+
+    <footer>
+        <p>Retriever Rush - UMBC IS 448, Group 8</p>
+    </footer>
 
     <script src="supply-cart.js"></script>
     <script>
