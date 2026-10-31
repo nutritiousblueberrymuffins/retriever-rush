@@ -4,66 +4,163 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Student Market - Retriever Rush</title>
+    <title>Student Market · Borrower Home</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="indexheader.css">
 </head>
 <body>
+    
+    <!--navi header-->
     <header>
-        <a class="logo" href="../index.html">Retriever Rush</a>
         <nav>
-          <header>
-              <nav>
-                  <ul class="list-of-navigations">
-                      <li><a href="index.html">Retriever Rush</a></li>
-                      <li><a href="menu.html">Browse Food</a></li>
-                      <li><a href="supplies.html" class="active">Student Market</a></li>
-                      <li><a href="login.html">Login</a></li>
-                      <li><a href="signup.html">Sign Up</a></li>
-                      <li><a href="cart-supply.html">Cart (<span class="cart-count-badge">0</span>)</a></li>
-                  </ul>
-              </nav>
-          </header>
+            <ul class="list-of-navigations">
+                <li><a href="index.html">Retriever Rush</a></li>
+                <li><a href="menu.html">Browse Food</a></li>
+                <li><a href="supplies.html" class="active">Student Market</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="signup.html">Sign Up</a></li>
+                <li><a href="cart-supply.html">Cart (<span class="cart-count-badge">0</span>)</a></li>
+            </ul>
         </nav>
     </header>
 
-    <div class="title-bar">
-        <h1>Student Market: Borrow & Buy</h1>
-    </div>
+    <main class="container section">
+        
+        <span class="eyebrow" style="display: flex; align-items: center; gap: 6px;">
+            <img src="assets/back.svg" alt="Back" width="14" height="14">
+            STUDENT MARKET / BORROW
+        </span>
 
-    <main>
-        <form>
-            <label for="search">Search supplies</label>
-            <input id="search" type="text" placeholder="Search supplies...">
-        </form>
+        <!--Title-->
+        <h1 style="margin: 12px 0 8px; font-size: 2.25rem;">Study essentials. Ready to borrow or Purchase.</h1>
+        <p style="color: #73716C; margin-bottom: 24px;">Reserve, collect, and return. A little less to carry through your semester.</p>
 
-        <h2>Available Equipment</h2>
+        <!--search bar -->
+        <div class="form-card" style="margin-bottom: 24px; padding: 8px 16px; display: flex; gap: 12px; align-items: center; background: #FFFFFF; border: 1px solid #E7E1D6; border-radius: 12px;">
+            <img src="assets/search.svg" alt="Search Icon" width="20" height="20">
+            <input type="text" placeholder="Search supplies..." style="flex: 1; border: none; outline: none; font-size: 1rem; background: transparent;">
+            <button type="button" class="btn" style="padding: 10px 24px;">Search</button>
+        </div>
 
-        <div class="item">
-            <a href="item-calculator.html">Scientific Calculator</a>
-            <span class="open">In Stock</span>
-            <div class="actions">
-                <button type="button" onclick="addToCart('calculator', 'Scientific Calculator', 0.00, 'borrow', 'assets/calculator.svg')" class="btn">Borrow Free</button>
-                <button type="button" onclick="addToCart('calculator', 'Scientific Calculator', 18.99, 'buy', 'assets/calculator.svg')" class="btn">Buy $18.99</button>
+        <!-- navigation toggling -->
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; margin-bottom: 32px;">
+            
+            <!-- for categories -->
+            <div class="button-row" style="margin: 0;">
+                <a href="supplies.html" class="btn">All</a>
+                <a href="calculators.html" class="btn btn-secondary">Calculators</a>
+                <a href="study-tools.html" class="btn btn-secondary">Study tools</a>
+                <a href="lab-supplies.html" class="btn btn-secondary">Lab essentials</a>
+            </div>
+
+            <!-- Mode Switcher (Borrow vs Buy) -->
+            <div>
+                <a href="buy-supplies.html" class="btn btn-secondary" style="font-size: 0.875rem;">
+                    Switch to Buy Supplies Store →
+                </a>
             </div>
         </div>
 
-        <div class="item">
-            <a href="item-study-kit.html">Study Kit</a>
-            <span class="open">In Stock</span>
-            <div class="actions">
-                <button type="button" onclick="addToCart('study-kit', 'Study Kit Bundle', 0.00, 'borrow', 'assets/study-kit.svg')" class="btn">Borrow Free</button>
-                <button type="button" onclick="addToCart('study-kit', 'Study Kit Bundle', 4.99, 'buy', 'assets/study-kit.svg')" class="btn">Buy $4.99</button>
-            </div>
+        <!-- Catalog Header -->
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+            <span style="font-weight: 600; color: #73716C; font-size: 0.9rem;">3 items available</span>
         </div>
 
-        <div class="item">
-            <a href="item-lab-googles.html">Lab Safety Goggles</a>
-            <span class="open">In Stock</span>
-            <div class="actions">
-                <button type="button" onclick="addToCart('goggles', 'Lab Safety Goggles', 0.00, 'borrow', 'assets/goggles.svg')" class="btn">Borrow Free</button>
-                <button type="button" onclick="addToCart('goggles', 'Lab Safety Goggles', 8.50, 'buy', 'assets/goggles.svg')" class="btn">Buy $8.50</button>
+        <!-- items on the menu -->
+        <div class="catalog-grid">
+            
+            <!-- scientidic calculator-->
+            <div class="catalog-card">
+                <a href="item-calculator.html" class="card-art" style="position: relative; display: block;">
+                    <span style="position: absolute; top: 12px; left: 12px; background: #FFFFFF; border: 1px solid #E7E1D6; padding: 4px 10px; border-radius: 12px; font-size: 0.75rem; font-weight: 600;">In Stock</span>
+                    <img src="assets/calculator.svg" alt="Scientific Calculator" width="400" height="320">
+                </a>
+                <div class="card-content">
+                    <h2><a href="item-calculator.html" style="color: inherit; text-decoration: none;">Scientific Calculator</a></h2>
+                    <p>Dual-power scientific calculator for class or exams.</p>
+                    
+                    <!-- Dual Option Footer -->
+                    <div style="margin-top: 16px; padding-top: 12px; border-top: 1px solid #E7E1D6; display: flex; flex-direction: column; gap: 8px;">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <span style="font-weight: 600; font-size: 0.9rem;">Free Loan</span>
+                            <button type="button" onclick="addToCart('calculator', 'Scientific Calculator', 0.00, 'borrow', 'assets/calculator.svg')" class="btn btn-secondary" style="padding: 6px 14px; font-size: 0.85rem;">
+                                Borrow Free →
+                            </button>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <span style="font-weight: 700; font-size: 0.95rem; color: #171717;">$18.99 to buy</span>
+                            <button type="button" onclick="addToCart('calculator', 'Scientific Calculator', 18.99, 'buy', 'assets/calculator.svg')" class="btn" style="padding: 6px 14px; font-size: 0.85rem;">
+                                Buy $18.99
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
+
+            <!-- studying kits -->
+            <div class="catalog-card">
+                <a href="item-study-kit.html" class="card-art" style="position: relative; display: block;">
+                    <span style="position: absolute; top: 12px; left: 12px; background: #FFFFFF; border: 1px solid #E7E1D6; padding: 4px 10px; border-radius: 12px; font-size: 0.75rem; font-weight: 600;">In Stock</span>
+                    <img src="assets/study-kit.svg" alt="Study Kit" width="400" height="320">
+                </a>
+                <div class="card-content">
+                    <h2><a href="item-study-kit.html" style="color: inherit; text-decoration: none;">Study Kit</a></h2>
+                    <p>A ruler, pens, and reusable study materials in one handy kit.</p>
+                    
+                    <!-- Dual Option Footer -->
+                    <div style="margin-top: 16px; padding-top: 12px; border-top: 1px solid #E7E1D6; display: flex; flex-direction: column; gap: 8px;">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <span style="font-weight: 600; font-size: 0.9rem;">Free Loan</span>
+                            <button type="button" onclick="addToCart('study-kit', 'Study Kit Bundle', 0.00, 'borrow', 'assets/study-kit.svg')" class="btn btn-secondary" style="padding: 6px 14px; font-size: 0.85rem;">
+                                Borrow Free →
+                            </button>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <span style="font-weight: 700; font-size: 0.95rem; color: #171717;">$4.99 to buy</span>
+                            <button type="button" onclick="addToCart('study-kit', 'Study Kit Bundle', 4.99, 'buy', 'assets/study-kit.svg')" class="btn" style="padding: 6px 14px; font-size: 0.85rem;">
+                                Buy $4.99
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lab goggles -->
+            <div class="catalog-card">
+                <a href="item-lab-googles.html" class="card-art" style="position: relative; display: block;">
+                    <span style="position: absolute; top: 12px; left: 12px; background: #FFFFFF; border: 1px solid #E7E1D6; padding: 4px 10px; border-radius: 12px; font-size: 0.75rem; font-weight: 600;">In Stock</span>
+                    <img src="assets/goggles.svg" alt="Lab Goggles" width="400" height="320">
+                </a>
+                <div class="card-content">
+                    <h2><a href="item-lab-googles.html" style="color: inherit; text-decoration: none;">Lab Safety Goggles</a></h2>
+                    <p>ANSI-certified protective goggles for chemistry and biology labs.</p>
+                    
+                    <!-- Dual Option Footer -->
+                    <div style="margin-top: 16px; padding-top: 12px; border-top: 1px solid #E7E1D6; display: flex; flex-direction: column; gap: 8px;">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <span style="font-weight: 600; font-size: 0.9rem;">Free Loan</span>
+                            <button type="button" onclick="addToCart('goggles', 'Lab Safety Goggles', 0.00, 'borrow', 'assets/goggles.svg')" class="btn btn-secondary" style="padding: 6px 14px; font-size: 0.85rem;">
+                                Borrow Free →
+                            </button>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <span style="font-weight: 700; font-size: 0.95rem; color: #171717;">$8.50 to buy</span>
+                            <button type="button" onclick="addToCart('goggles', 'Lab Safety Goggles', 8.50, 'buy', 'assets/goggles.svg')" class="btn" style="padding: 6px 14px; font-size: 0.85rem;">
+                                Buy $8.50
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
+
+        <!-- the banner at the bottom -->
+        <div style="margin-top: 48px; background: #FFF9ED; border: 1px solid #E7E1D6; border-radius: 12px; padding: 16px 20px; display: flex; align-items: center; gap: 12px; font-size: 0.9rem; color: #171717;">
+            <img src="assets/info.svg" alt="Info Icon" width="20" height="20">
+            <span>Borrowing is free in this demo. Collect and return items at the student center desk within 3 days.</span>
+        </div>
+
     </main>
 
     <footer>
@@ -75,5 +172,6 @@
         document.addEventListener('DOMContentLoaded', updateCartBadge);
     </script>
 </body>
+</html>
 </html>
 </html>
