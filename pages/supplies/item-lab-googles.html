@@ -2,49 +2,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lab Essentials · Student Market</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="indexheader.css">
 </head>
 <body>
-    <header class="main-header">
-        <a href="index.html" class="logo-btn">
-            <img src="assets/brand-mark.svg" alt="Retriever Rush Logo" width="32" height="32">
-            Retriever Rush
-        </a>
-        <nav class="top-nav">
-            <header>
-                <nav>
-                    <ul class="list-of-navigations">
-                        <li><a href="index.html">Retriever Rush</a></li>
-                        <li><a href="menu.html">Browse Food</a></li>
-                        <li><a href="supplies.html" class="active">Student Market</a></li>
-                        <li><a href="login.html">Login</a></li>
-                        <li><a href="signup.html">Sign Up</a></li>
-                        <li><a href="cart-supply.html">Cart (<span class="cart-count-badge">0</span>)</a></li>
-                    </ul>
-                </nav>
-            </header>g Icon" width="20" height="20">
-            <span class="cart-count-badge">0</span>
-        </a>
+    <header>
+        <nav>
+            <ul class="list-of-navigations">
+                <li><a href="index.html">Retriever Rush</a></li>
+                <li><a href="menu.html">Browse Food</a></li>
+                <li><a href="supplies.html" class="active">Student Market</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="signup.html">Sign Up</a></li>
+                <li><a href="cart-supply.html">Cart (<span class="cart-count-badge">0</span>)</a></li>
+            </ul>
         </nav>
     </header>
+
+    <div class="title-bar">
+        <h1>Lab gear and safety supplies.</h1>
+        <p class="subtitle">Protective safety goggles, coats, and equipment for campus laboratory sessions.</p>
+    </div>
 
     <main class="container section">
         <span class="eyebrow">
             <img src="assets/back.svg" alt="Back" width="14" height="14">
             STUDENT MARKET / LAB ESSENTIALS
         </span>
-        <h1>Lab gear and safety supplies.</h1>
-        <p class="subtitle">Protective safety goggles, coats, and equipment for campus laboratory sessions.</p>
 
         <!--ofc the search barrrr -->
         <div class="form-card search-card">
             <img src="assets/search.svg" alt="Search Icon" width="20" height="20">
             <input type="text" placeholder="Search lab supplies...">
-            <button class="btn">Search</button>
+            <button type="button" class="btn">Search</button>
         </div>
 
         <!-- the menu if they want to see it again -->
@@ -86,6 +79,10 @@
             </div>
         </div>
     </main>
+
+    <footer>
+        <p>Retriever Rush - UMBC IS 448, Group 8</p>
+    </footer>
 
     <script src="supply-cart.js"></script>
     <script>
