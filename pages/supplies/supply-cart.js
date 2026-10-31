@@ -56,6 +56,7 @@ function updateCartBadge() {
 }
 
 
+
 //updating the cart and adding the numbers + taxes math.
 function renderCartPage() {
     const container = document.getElementById('cart-items-container');
@@ -140,6 +141,48 @@ function renderCartPage() {
         </a>
     `;
 }
+
+
+//to render checkout page
+function renderCheckoutPage() {
+    const list = document.getElementById('checkout-items-list');
+    const totalBox = document.getElementById('checkout-total-box');
+    if (!list || !totalBox) return;
+
+    const cart = getCart();
+    let listHTML = '';
+    let subtotalBuy = 0;
+
+    cart.forEach(item => {
+        const isBorrow = item.mode === 'borrow';
+        const itemTotal = item.price * item.quantity;
+        if (!isBorrow) subtotalBuy += itemTotal;
+
+        listHTML += `
+            <li style="display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #E7E1D6;">
+                <div>
+                    <strong>${item.name} (${item.quantity}x)</strong>
+                    <div style="font-size: 0.8rem; color: #73716C;">
+                        ${isBorrow ? 'Free Loan · Return in 3 days' : 'Store Purchase'}
+                    </div>
+                </div>
+                <strong style="color: #171717;">
+                    ${isBorrow ? 'Free Loan ($0.00)' : '$' + itemTotal.toFixed(2)}
+                </strong>
+            </li>
+        `;
+    });
+
+    const grandTotal = subtotalBuy * 1.06;
+
+    list.innerHTML = listHTML;
+    totalBox.innerHTML = `
+        <span style="font-weight: 600;">Total Due at Pickup/Checkout:</span>
+        <strong style="font-size: 1.1rem; color: #171717;">$${grandTotal.toFixed(2)}</strong>
+    `;
+}
+
+
 
 
 // help to determin which page to refresh
