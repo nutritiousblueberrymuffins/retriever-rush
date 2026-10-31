@@ -1,0 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap");
+
+:root {
+  --yellow: #FDB515;
+  --cream: #FFF9ED;
+  --ink: #171717;
+  --muted: #73716C;
+  --border: #E7E1D6;
+  --white: #FFFFFF;
+
+  --heading-font: "Plus Jakarta Sans", sans-serif;
+  --body-font: "Inter", sans-serif;
+
+  --content-width: 1200px;
+
+  --radius-button: 12px;
+  --radius-card: 18px;
+  --radius-panel: 24px;
+}
+
+body {
+  margin: 0;
+  font-family: var(--body-font);
+  color: var(--ink);
+  background: var(--cream);
+}
+
+h1, h2, h3 {
+  font-family: var(--heading-font);
+}
