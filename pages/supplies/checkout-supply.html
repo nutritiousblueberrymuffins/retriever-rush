@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Checkout Equipment & Supplies · Retriever Rush</title>
+    <title>Reservation Confirmed · Retriever Rush</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="indexheader.css">
 </head>
@@ -23,93 +23,56 @@
     </header>
 
     <div class="title-bar">
-        <h1>Equipment & Supply Checkout</h1>
-        <p class="subtitle">Review your auto-filled account information and accept the equipment disclaimer to place your order.</p>
+        <h1>Reservation Confirmed</h1>
     </div>
 
-    <main class="container section checkout-container">
-        <span class="eyebrow">
-            <img src="assets/back.svg" alt="Back Arrow" width="14" height="14"> 
-            STUDENT MARKET / CHECKOUT
+    <main class="container section confirmation-container">
+        
+        <!-- thought it would be fun to put the mascot in-->
+        <img src="assets/mascot-celebrating.png" alt="Retriever Mascot Celebrating" width="160" height="160" class="mascot-img">
+
+        <span class="eyebrow eyebrow-center">
+            <img src="assets/spark.svg" alt="Spark Icon" width="16" height="16">
+            RESERVATION CONFIRMED
         </span>
 
-        <form action="confirmation-supply.html" method="GET">
-            
-            <!-- Student input into or auto fill with logged in -->
-            <div class="form-card">
-                <div class="card-header-row">
-                    <h2>
-                        <img src="assets/user.svg" alt="User Icon" width="20" height="20">
-                        1. Student Identification
-                    </h2>
-                    <span class="badge-status">
-                        Logged In (Auto-filled)
-                    </span>
-                </div>
-                
-                <div class="form-group">
-                    <label for="fullName">Full Name</label>
-                    <input id="fullName" name="fullName" type="text" value="Alex Retriever" required>
-                </div>
+        <h2>You're all set to pick up!</h2>
+        <p class="subtitle">
+            Your equipment loan reservation has been successfully processed. Show your physical Student ID at the pickup desk during your scheduled window.
+        </p>
 
-                <div class="form-group">
-                    <label for="studentId">Campus Student ID Number</label>
-                    <input id="studentId" name="studentId" type="text" pattern="[A-Za-z0-9]{7,10}" value="AB12345" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="email">Student Email Address</label>
-                    <input id="email" name="email" type="email" value="alexr1@umbc.edu" required>
-                </div>
+        <!--summary receipt  -->
+        <div class="form-card receipt-card">
+            <div class="receipt-header">
+                <img src="assets/check.svg" alt="Check Icon" width="20" height="20">
+                <strong>Reservation #RR-84920</strong>
             </div>
 
-            <!-- summary of items -->
-            <!-- Loan Item -->
-            <!-- buying an item-->
-            <!-- total amount -->
-            <div class="form-card">
-                <h2>
-                    <img src="assets/grid.svg" alt="Grid Icon" width="20" height="20">
-                    2. Selected Items & Order Breakdown
-                </h2>
-                
-                <ul id="checkout-items-list" class="checkout-list"></ul>
-
-                <div id="checkout-total-box" class="total-box"></div>
+            <div class="receipt-body">
+                <p>
+                    <span class="muted-text">Pickup Desk:</span>
+                    <strong>Student Center Desk (1st Floor)</strong>
+                </p>
+                <p>
+                    <span class="muted-text">Maximum Loan Term:</span>
+                    <strong>3 Days</strong>
+                </p>
+                <p>
+                    <!--this is for free loans -->
+                    <span class="muted-text">Cost:</span>
+                    <strong>$0.00 (Free Loan)</strong>
+                </p>
             </div>
+        </div>
 
-            <!--damage and loss policy agreement -->
-            <div class="form-card">
-                <h2>
-                    <img src="assets/shield.svg" alt="Shield Icon" width="20" height="20">
-                    3. Damage & Loss Policy Agreement
-                </h2>
-                
-                <div class="policy-box">
-                    <ul>
-                        <li><strong>Equipment Care (Loans):</strong> Inspect borrowed items upon pickup at the Student Center Desk. You are responsible for returning borrowed items in good condition within 3 days.</li>
-                        <li><strong>Damaged Equipment:</strong> Broken or non-working borrowed equipment will result in repair or replacement costs billed to your student account.</li>
-                        <li><strong>Purchased Items:</strong> Store purchases are final and added to your campus billing summary.</li>
-                    </ul>
-                </div>
+        <!-- Return to Market Button -->
+        <div class="button-row center-row">
+            <a href="supplies.html" class="btn">
+                Return to Student Market
+                <img src="assets/arrow.svg" alt="Arrow Right" width="16" height="16">
+            </a>
+        </div>
 
-                <label class="checkbox-label">
-                    <input type="checkbox" id="agreeTerms" name="agreeTerms" required>
-                    <span>I have read and agree to the damage/loss terms and commit to returning borrowed items in good condition.</span>
-                </label>
-            </div>
-
-            <!--action buttons-->
-            <!--confirming their order.-->
-            <div class="button-row">
-                <button type="submit" class="btn">
-                    Confirm & Reserve Order 
-                    <img src="assets/arrow.svg" alt="Arrow Right" width="16" height="16">
-                </button>
-                <a href="supplies.html" class="btn btn-secondary">Cancel</a>
-            </div>
-
-        </form>
     </main>
 
     <footer>
@@ -118,10 +81,8 @@
 
     <script src="supply-cart.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            updateCartBadge();
-            renderCheckoutPage();
-        });
+        localStorage.removeItem('retriever_rush_cart');
+        updateCartBadge();
     </script>
 </body>
 </html>
