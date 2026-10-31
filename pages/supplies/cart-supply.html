@@ -17,106 +17,42 @@
         <nav class="top-nav">
             <a href="index.html">Browse food</a>
             <a href="supplies.html" class="active">Student Market</a>
-            <a href="cart-supply.html">
+            <a href="cart-supply.html" class="cart-link">
                 <img src="assets/bag.svg" alt="Bag Icon" width="20" height="20">
+                <span class="cart-count-badge">0</span>
             </a>
         </nav>
     </header>
 
-    <main class="container section" style="max-width: 960px; margin: 40px auto; padding: 0 20px;">
-        <span class="eyebrow" style="display: flex; align-items: center; gap: 6px;">
+    <main class="container section">
+        <span class="eyebrow">
             <img src="assets/back.svg" alt="Back Arrow" width="14" height="14"> 
             STUDENT MARKET / YOUR CART
         </span>
-        <h1 style="margin: 12px 0 20px;">Your Supply Cart</h1>
-        <p style="margin-bottom: 32px;">Review selected items before proceeding to checkout.</p>
+        <h1>Your Supply Cart</h1>
+        <p class="subtitle">Review selected items before proceeding to checkout.</p>
 
-        <div style="display: grid; grid-template-columns: 1fr 320px; gap: 24px; align-items: start;">
+        <div class="cart-layout">
             
-            <!--a list of your cart items -->
-            <div style="display: grid; gap: 16px;">
-                
-                <!-- This one is when you are borrowing an item too. -->
-                <div class="form-card" style="display: flex; gap: 16px; align-items: center; padding: 16px;">
-                    <div style="background: #FFF9ED; border: 1px solid #E7E1D6; border-radius: 8px; width: 80px; height: 80px; display: flex; align-items: center; justify-content: center;">
-                        <img src="assets/calculator.svg" alt="Scientific Calculator" width="60" height="60">
-                    </div>
-                    <div style="flex: 1;">
-                        <h3 style="margin: 0 0 4px; font-size: 1.1rem;">Scientific Calculator</h3>
-                        <p style="margin: 0; font-size: 0.875rem; color: #73716C;">Loan Item · Max 3 Days</p>
-                        <span style="font-weight: 600; font-size: 0.9rem; color: #171717;">Free to borrow</span>
-                    </div>
-                    <div style="display: flex; align-items: center; gap: 12px;">
-                        <button style="background: none; border: 1px solid #E7E1D6; border-radius: 50%; width: 28px; height: 28px; cursor: pointer; display: flex; align-items: center; justify-content: center;">
-                            <img src="assets/minus.svg" alt="Decrease" width="12" height="12">
-                        </button>
-                        <span style="font-weight: 600;">1</span>
-                        <button style="background: none; border: 1px solid #E7E1D6; border-radius: 50%; width: 28px; height: 28px; cursor: pointer; display: flex; align-items: center; justify-content: center;">
-                            <img src="assets/plus.svg" alt="Increase" width="12" height="12">
-                        </button>
-                    </div>
-                    <button style="background: none; border: none; cursor: pointer; padding: 4px;" aria-label="Remove item">
-                        <img src="assets/close.svg" alt="Remove" width="16" height="16">
-                    </button>
-                </div>
+            <!--a list of cart items -->
+            <!-- This one is when you are borrowing an item too. -->
+            <!-- another item they are checking out, a study kit -->
+            <div id="cart-items-container" class="cart-items-list"></div>
 
-                <!-- another item they are checking our, a study kit -->
-                <div class="form-card" style="display: flex; gap: 16px; align-items: center; padding: 16px;">
-                    <div style="background: #FFF9ED; border: 1px solid #E7E1D6; border-radius: 8px; width: 80px; height: 80px; display: flex; align-items: center; justify-content: center;">
-                        <img src="assets/study-kit.svg" alt="Study Kit" width="60" height="60">
-                    </div>
-                    <div style="flex: 1;">
-                        <h3 style="margin: 0 0 4px; font-size: 1.1rem;">Study Kit (Ruler & Pens)</h3>
-                        <p style="margin: 0; font-size: 0.875rem; color: #73716C;">Store Purchase</p>
-                        <span style="font-weight: 600; font-size: 0.9rem; color: #171717;">$4.99</span>
-                    </div>
-                    <div style="display: flex; align-items: center; gap: 12px;">
-                        <button style="background: none; border: 1px solid #E7E1D6; border-radius: 50%; width: 28px; height: 28px; cursor: pointer; display: flex; align-items: center; justify-content: center;">
-                            <img src="assets/minus.svg" alt="Decrease" width="12" height="12">
-                        </button>
-                        <span style="font-weight: 600;">1</span>
-                        <button style="background: none; border: 1px solid #E7E1D6; border-radius: 50%; width: 28px; height: 28px; cursor: pointer; display: flex; align-items: center; justify-content: center;">
-                            <img src="assets/plus.svg" alt="Increase" width="12" height="12">
-                        </button>
-                    </div>
-                    <button style="background: none; border: none; cursor: pointer; padding: 4px;" aria-label="Remove item">
-                        <img src="assets/close.svg" alt="Remove" width="16" height="16">
-                    </button>
-                </div>
-
-            </div>
-
-            <!-- the summary of the sidebar with prices-->
-            <div class="form-card">
-                <h2 style="margin: 0 0 16px; font-size: 1.25rem;">Order Summary</h2>
-                
-                <div style="display: grid; gap: 10px; font-size: 0.95rem; margin-bottom: 16px; border-bottom: 1px solid #E7E1D6; padding-bottom: 16px;">
-                    <div style="display: flex; justify-content: space-between;">
-                        <span style="color: #73716C;">Equipment Loans (1)</span>
-                        <span>$0.00</span>
-                    </div>
-                    <div style="display: flex; justify-content: space-between;">
-                        <span style="color: #73716C;">Supply Purchases (1)</span>
-                        <span>$4.99</span>
-                    </div>
-                    <div style="display: flex; justify-content: space-between;">
-                        <span style="color: #73716C;">Estimated Tax</span>
-                        <span>$0.30</span>
-                    </div>
-                </div>
-
-                <div style="display: flex; justify-content: space-between; font-weight: 700; font-size: 1.1rem; margin-bottom: 24px;">
-                    <span>Total</span>
-                    <span>$5.29</span>
-                </div>
-
-                <a href="checkout-supply.html" class="btn" style="width: 100%; text-align: center; justify-content: center; box-sizing: border-box;">
-                    Proceed to Checkout
-                    <img src="assets/arrow.svg" alt="Arrow Right" width="16" height="16">
-                </a>
-            </div>
+            <!--summary of the sidebar with prices-->
+            <div class="form-card" id="cart-summary-sidebar"></div>
 
         </div>
     </main>
+
+    <script src="supply-cart.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            updateCartBadge();
+            renderCartPage();
+        });
+    </script>
+</body>
+</html>
 </body>
 </html>
