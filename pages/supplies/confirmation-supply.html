@@ -17,52 +17,54 @@
         <nav class="top-nav">
             <a href="index.html">Browse food</a>
             <a href="supplies.html" class="active">Student Market</a>
-            <a href="empty-supply.html">
+            <a href="cart-supply.html" class="cart-link">
                 <img src="assets/bag.svg" alt="Bag Icon" width="20" height="20">
+                <span class="cart-count-badge">0</span>
             </a>
         </nav>
     </header>
 
-    <main class="container section" style="max-width: 600px; margin: 40px auto; text-align: center;">
+    <main class="container section confirmation-container">
         
         <!-- thought it would be fun to put the mascot in-->
-        <img src="assets/mascot-celebrating.png" alt="Retriever Mascot Celebrating" width="160" height="160" style="margin-bottom: 24px;">
+        <img src="assets/mascot-celebrating.png" alt="Retriever Mascot Celebrating" width="160" height="160" class="mascot-img">
 
-        <span class="eyebrow" style="justify-content: center; display: flex; align-items: center; gap: 6px;">
+        <span class="eyebrow eyebrow-center">
             <img src="assets/spark.svg" alt="Spark Icon" width="16" height="16">
             RESERVATION CONFIRMED
         </span>
 
-        <h1 style="margin: 12px 0 16px;">You're all set to pick up!</h1>
-        <p style="margin-bottom: 32px; color: #73716C;">
+        <h1>You're all set to pick up!</h1>
+        <p class="subtitle">
             Your equipment loan reservation has been successfully processed. Show your physical Student ID at the pickup desk during your scheduled window.
         </p>
 
         <!--summary receipt  -->
-        <div class="form-card" style="text-align: left; margin-bottom: 32px;">
-            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 16px; border-bottom: 1px solid #E7E1D6; padding-bottom: 12px;">
+        <div class="form-card receipt-card">
+            <div class="receipt-header">
                 <img src="assets/check.svg" alt="Check Icon" width="20" height="20">
-                <strong style="font-size: 1.1rem;">Reservation #RR-84920</strong>
+                <strong>Reservation #RR-84920</strong>
             </div>
 
-            <div style="display: grid; gap: 10px; font-size: 0.95rem;">
-                <p style="margin: 0; display: flex; justify-content: space-between;">
-                    <span style="color: #73716C;">Pickup Desk:</span>
+            <div class="receipt-body">
+                <p>
+                    <span class="muted-text">Pickup Desk:</span>
                     <strong>Student Center Desk (1st Floor)</strong>
                 </p>
-                <p style="margin: 0; display: flex; justify-content: space-between;">
-                    <span style="color: #73716C;">Maximum Loan Term:</span>
+                <p>
+                    <span class="muted-text">Maximum Loan Term:</span>
                     <strong>3 Days</strong>
                 </p>
-                <p style="margin: 0; display: flex; justify-content: space-between;">
-                    <span style="color: #73716C;">Cost:</span>
-                    <strong>$0.00 (Free Loan)</strong> <!--this is for free loans -->
+                <p>
+                    <!--this is for free loans -->
+                    <span class="muted-text">Cost:</span>
+                    <strong>$0.00 (Free Loan)</strong>
                 </p>
             </div>
         </div>
 
         <!-- Return to Market Button -->
-        <div class="button-row" style="justify-content: center;">
+        <div class="button-row center-row">
             <a href="supplies.html" class="btn">
                 Return to Student Market
                 <img src="assets/arrow.svg" alt="Arrow Right" width="16" height="16">
@@ -70,5 +72,11 @@
         </div>
 
     </main>
+
+    <script src="supply-cart.js"></script>
+    <script>
+        localStorage.removeItem('retriever_rush_cart');
+        updateCartBadge();
+    </script>
 </body>
 </html>
