@@ -1,0 +1,109 @@
+header {
+    font-family: var(--heading-font);
+    margin: 5px;
+}
+
+.hero {
+    /* display layout type */
+    display: grid;
+}
+
+.list-of-navigations {
+    /*display layout type */
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    /*borderbox properties */
+    width: 100%;
+    height: auto;
+    padding: 10px 20px;
+
+    /*misc */
+    list-style-type: none;
+
+}
+
+
+/* body part make seperate file later */
+
+.title .subtitle {
+
+    /*display layout type */
+    display: block;
+
+    /*borderbox properties */
+    width: 100%;
+    height: auto;
+    
+    
+    /*misc */
+    list-style-type: none;
+    background: var(--ink);
+    color: var(--white);
+    font-size: 8px;
+
+}
+
+
+
+
+
+.mascot-container {
+
+    /* display layout type */
+    position: relative;
+
+    /* borderbox properties */
+    width: 300px;
+
+
+    /* misc */
+
+    translate: 1000px 0px 0px;
+    z-index: 1;
+    /*
+    
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    width: 25ch;
+    height: 25ch;
+    
+    margin-top: 20px;
+    */
+}
+
+
+.circle {
+
+    /* display layout type */
+    position: relative;
+    top: 0%;
+    z-index: 0;
+
+    /* borderbox properties */
+    width: 100px;
+
+
+    /* misc */
+    background: #FDB515;
+}
+
+.mascot-image {
+
+    /* display layout type */
+    position: absolute;
+
+    /* borderbox properties */
+    width: 100%;
+    height: auto;
+
+    /* misc */
+    left: 50%;
+    bottom: 0;
+    z-index: 1;
+}
