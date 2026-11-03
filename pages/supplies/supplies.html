@@ -5,8 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Student Market · Borrower Home</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="indexheader.css">
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../../indexheader.css">
 </head>
 <body>
     
@@ -14,11 +14,11 @@
     <header>
         <nav>
             <ul class="list-of-navigations">
-                <li><a href="index.html">Retriever Rush</a></li>
-                <li><a href="menu.html">Browse Food</a></li>
+                <li><a href="../../index.html">Retriever Rush</a></li>
+                <li><a href="../../menu.html">Browse Food</a></li>
                 <li><a href="supplies.html" class="active">Student Market</a></li>
-                <li><a href="login.html">Login</a></li>
-                <li><a href="signup.html">Sign Up</a></li>
+                <li><a href="../../login.html">Login</a></li>
+                <li><a href="../../signup.html">Sign Up</a></li>
                 <li><a href="cart-supply.html">Cart (<span class="cart-count-badge">0</span>)</a></li>
             </ul>
         </nav>
@@ -32,13 +32,13 @@
     <main class="container section">
         
         <span class="eyebrow">
-            <img src="assets/back.svg" alt="Back" width="14" height="14">
+            <img src="../../assets/back.svg" alt="Back" width="14" height="14">
             STUDENT MARKET / BORROW
         </span>
 
         <!--search bar -->
         <div class="form-card search-card">
-            <img src="assets/search.svg" alt="Search Icon" width="20" height="20">
+            <img src="../../assets/search.svg" alt="Search Icon" width="20" height="20">
             <input type="text" placeholder="Search supplies...">
             <button type="button" class="btn">Search</button>
         </div>
@@ -49,14 +49,14 @@
             <!-- for categories -->
             <div class="button-row">
                 <a href="supplies.html" class="btn">All</a>
-                <a href="calculators.html" class="btn btn-secondary">Calculators</a>
-                <a href="study-tools.html" class="btn btn-secondary">Study tools</a>
-                <a href="lab-supplies.html" class="btn btn-secondary">Lab essentials</a>
+                <a href="item-calculator.html" class="btn btn-secondary">Calculators</a>
+                <a href="item-study-kit.html" class="btn btn-secondary">Study tools</a>
+                <a href="item-lab-googles.html" class="btn btn-secondary">Lab essentials</a>
             </div>
 
             <!-- Mode Switcher (Borrow vs Buy) -->
             <div>
-                <a href="buy-supplies.html" class="btn btn-secondary btn-sm">
+                <a href="supplies.html" class="btn btn-secondary btn-sm">
                     Switch to Buy Supplies Store →
                 </a>
             </div>
@@ -74,7 +74,7 @@
             <div class="catalog-card">
                 <a href="item-calculator.html" class="card-art">
                     <span class="badge">In Stock</span>
-                    <img src="assets/calculator.svg" alt="Scientific Calculator" width="400" height="320">
+                    <img src="../../assets/calculator.svg" alt="Scientific Calculator" width="400" height="320">
                 </a>
                 <div class="card-content">
                     <h2><a href="item-calculator.html" class="card-title-link">Scientific Calculator</a></h2>
@@ -84,13 +84,13 @@
                     <div class="card-actions">
                         <div class="action-row">
                             <span class="option-label">Free Loan</span>
-                            <button type="button" onclick="addToCart('calculator', 'Scientific Calculator', 0.00, 'borrow', 'assets/calculator.svg')" class="btn btn-secondary btn-sm">
+                            <button type="button" onclick="addToCart('calculator', 'Scientific Calculator', 0.00, 'borrow', '../../assets/calculator.svg')" class="btn btn-secondary btn-sm">
                                 Borrow Free →
                             </button>
                         </div>
                         <div class="action-row">
                             <span class="price-text">$18.99 to buy</span>
-                            <button type="button" onclick="addToCart('calculator', 'Scientific Calculator', 18.99, 'buy', 'assets/calculator.svg')" class="btn btn-sm">
+                            <button type="button" onclick="addToCart('calculator', 'Scientific Calculator', 18.99, 'buy', '../../assets/calculator.svg')" class="btn btn-sm">
                                 Buy $18.99
                             </button>
                         </div>
@@ -102,7 +102,7 @@
             <div class="catalog-card">
                 <a href="item-study-kit.html" class="card-art">
                     <span class="badge">In Stock</span>
-                    <img src="assets/study-kit.svg" alt="Study Kit" width="400" height="320">
+                    <img src="../../assets/study-kit.svg" alt="Study Kit" width="400" height="320">
                 </a>
                 <div class="card-content">
                     <h2><a href="item-study-kit.html" class="card-title-link">Study Kit</a></h2>
@@ -112,13 +112,13 @@
                     <div class="card-actions">
                         <div class="action-row">
                             <span class="option-label">Free Loan</span>
-                            <button type="button" onclick="addToCart('study-kit', 'Study Kit Bundle', 0.00, 'borrow', 'assets/study-kit.svg')" class="btn btn-secondary btn-sm">
+                            <button type="button" onclick="addToCart('study-kit', 'Study Kit Bundle', 0.00, 'borrow', '../../assets/study-kit.svg')" class="btn btn-secondary btn-sm">
                                 Borrow Free →
                             </button>
                         </div>
                         <div class="action-row">
                             <span class="price-text">$4.99 to buy</span>
-                            <button type="button" onclick="addToCart('study-kit', 'Study Kit Bundle', 4.99, 'buy', 'assets/study-kit.svg')" class="btn btn-sm">
+                            <button type="button" onclick="addToCart('study-kit', 'Study Kit Bundle', 4.99, 'buy', '../../assets/study-kit.svg')" class="btn btn-sm">
                                 Buy $4.99
                             </button>
                         </div>
@@ -130,7 +130,7 @@
             <div class="catalog-card">
                 <a href="item-lab-googles.html" class="card-art">
                     <span class="badge">In Stock</span>
-                    <img src="assets/goggles.svg" alt="Lab Goggles" width="400" height="320">
+                    <img src="../../assets/goggles.svg" alt="Lab Goggles" width="400" height="320">
                 </a>
                 <div class="card-content">
                     <h2><a href="item-lab-googles.html" class="card-title-link">Lab Safety Goggles</a></h2>
@@ -140,13 +140,13 @@
                     <div class="card-actions">
                         <div class="action-row">
                             <span class="option-label">Free Loan</span>
-                            <button type="button" onclick="addToCart('goggles', 'Lab Safety Goggles', 0.00, 'borrow', 'assets/goggles.svg')" class="btn btn-secondary btn-sm">
+                            <button type="button" onclick="addToCart('goggles', 'Lab Safety Goggles', 0.00, 'borrow', '../../assets/goggles.svg')" class="btn btn-secondary btn-sm">
                                 Borrow Free →
                             </button>
                         </div>
                         <div class="action-row">
                             <span class="price-text">$8.50 to buy</span>
-                            <button type="button" onclick="addToCart('goggles', 'Lab Safety Goggles', 8.50, 'buy', 'assets/goggles.svg')" class="btn btn-sm">
+                            <button type="button" onclick="addToCart('goggles', 'Lab Safety Goggles', 8.50, 'buy', '../../assets/goggles.svg')" class="btn btn-sm">
                                 Buy $8.50
                             </button>
                         </div>
@@ -158,7 +158,7 @@
 
         <!-- the banner at the bottom -->
         <div class="info-banner">
-            <img src="assets/info.svg" alt="Info Icon" width="20" height="20">
+            <img src="../../assets/info.svg" alt="Info Icon" width="20" height="20">
             <span>Borrowing is free in this demo. Collect and return items at the student center desk within 3 days.</span>
         </div>
 
@@ -173,6 +173,4 @@
         document.addEventListener('DOMContentLoaded', updateCartBadge);
     </script>
 </body>
-</html>
-</html>
 </html>
