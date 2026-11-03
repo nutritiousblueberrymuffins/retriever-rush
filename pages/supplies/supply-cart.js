@@ -1,26 +1,20 @@
 // Author: Gabriela Jurado-Fuentes
-// Cart Management for Student Market Module
+const CART_KEY = 'retriever_rush_cart';
 
+//get cart from files
 function getCart() {
-    const cart = localStorage.getItem('retriever_rush_cart');
-    return cart ? JSON.parse(cart) : [];
+    return JSON.parse(localStorage.getItem(CART_KEY)) || [];
 }
 
+//saving the cart
 function saveCart(cart) {
-    localStorage.setItem('retriever_rush_cart', JSON.stringify(cart));
+    localStorage.setItem(CART_KEY, JSON.stringify(cart));
+    updateCartBadge();
 }
 
-function updateCartBadge() {
-    const cart = getCart();
-    const totalCount = cart.reduce((sum, item) => sum + (item.quantity || 1), 0);
-    const badges = document.querySelectorAll('.cart-count-badge');
-    badges.forEach(badge => {
-        badge.textContent = totalCount;
-    });
-}
-
+//adding to the cart
 function addToCart(id, name, price, mode, icon) {
-    const cart = getCart();
+    let cart = getCart();
     const existingIndex = cart.findIndex(item => item.id === id && item.mode === mode);
     
     if (existingIndex > -1) {
@@ -30,18 +24,39 @@ function addToCart(id, name, price, mode, icon) {
     }
     
     saveCart(cart);
-    updateCartBadge();
-    alert(`${name} (${mode === 'borrow' ? 'Free Loan' : 'Purchase'}) added to cart!`);
+    alert(`Added "${name}" (${mode.toUpperCase()}) to your bag!`);
 }
 
+//removing an item
 function removeFromCart(index) {
-    const cart = getCart();
+    let cart = getCart();
     cart.splice(index, 1);
     saveCart(cart);
-    updateCartBadge();
-    renderCartPage();
+    refreshCartView();
 }
 
+// Increase/Decrease items
+function updateQuantity(index, delta) {
+    let cart = getCart();
+    if (cart[index]) {
+        cart[index].quantity += delta;
+        if (cart[index].quantity <= 0) {
+            cart.splice(index, 1);
+        }
+        saveCart(cart);
+        refreshCartView();
+    }
+}
+
+// updating the bag icon
+function updateCartBadge() {
+    const cart = getCart();
+    const totalCount = cart.reduce((sum, item) => sum + item.quantity, 0);
+    const badges = document.querySelectorAll('.cart-count-badge');
+    badges.forEach(badge => badge.textContent = totalCount);
+}
+
+//updating the cart and adding the numbers + taxes math.
 function renderCartPage() {
     const container = document.getElementById('cart-items-container');
     const sidebar = document.getElementById('cart-summary-sidebar');
@@ -54,77 +69,129 @@ function renderCartPage() {
         return;
     }
 
-    let html = '';
-    let subtotal = 0;
+    let itemsHTML = '';
+    let subtotalBuy = 0;
+    let loanCount = 0;
 
     cart.forEach((item, index) => {
+        const isBorrow = item.mode === 'borrow';
         const itemTotal = item.price * item.quantity;
-        subtotal += itemTotal;
-        html += `
-            <div class="form-card" style="display:flex; justify-content:space-between; align-items:center;">
-                <div style="display:flex; align-items:center; gap:16px;">
-                    <img src="${item.icon}" width="48" height="48" alt="${item.name}">
-                    <div>
-                        <h3 style="margin:0;">${item.name}</h3>
-                        <span class="badge-status">${item.mode === 'borrow' ? 'Free Loan (3-Day)' : 'Purchase'}</span>
-                        <p style="margin:4px 0 0; color:var(--muted);">$${item.price.toFixed(2)} x ${item.quantity}</p>
-                    </div>
+        if (isBorrow) loanCount += item.quantity;
+        else subtotalBuy += itemTotal;
+
+        itemsHTML += `
+            <div class="form-card cart-item-card">
+                <div class="cart-item-img">
+                    <img src="${item.icon}" alt="${item.name}" width="50" height="50">
                 </div>
-                <button type="button" onclick="removeFromCart(${index})" class="btn btn-secondary btn-sm">Remove</button>
+                <div class="cart-item-details">
+                    <h3>${item.name}</h3>
+                    <p class="muted-text">
+                        ${isBorrow ? 'Loan Item · Max 3 Days' : 'Store Purchase (Keep)'}
+                    </p>
+                    <span class="price-tag">
+                        ${isBorrow ? 'Free to borrow' : '$' + item.price.toFixed(2)}
+                    </span>
+                </div>
+                <div class="quantity-controls">
+                    <button type="button" onclick="updateQuantity(${index}, -1)" class="qty-btn">
+                        <img src="../../assets/minus.svg" alt="Decrease" width="12" height="12">
+                    </button>
+                    <span>${item.quantity}</span>
+                    <button type="button" onclick="updateQuantity(${index}, 1)" class="qty-btn">
+                        <img src="../../assets/plus.svg" alt="Increase" width="12" height="12">
+                    </button>
+                </div>
+                <button type="button" onclick="removeFromCart(${index})" class="remove-btn" title="Remove">
+                    <img src="../../assets/close.svg" alt="Remove" width="16" height="16">
+                </button>
             </div>
         `;
     });
 
-    container.innerHTML = html;
+    const tax = subtotalBuy * 0.06;
+    const grandTotal = subtotalBuy + tax;
 
-    const tax = subtotal * 0.06;
-    const total = subtotal + tax;
+    container.innerHTML = itemsHTML;
 
     sidebar.innerHTML = `
         <h2>Order Summary</h2>
-        <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
-            <span>Subtotal</span>
-            <span>$${subtotal.toFixed(2)}</span>
+        <div class="summary-rows">
+            <div class="summary-row">
+                <span>Equipment Loans (${loanCount})</span>
+                <span>$0.00</span>
+            </div>
+            <div class="summary-row">
+                <span>Supply Purchases</span>
+                <span>$${subtotalBuy.toFixed(2)}</span>
+            </div>
+            <div class="summary-row">
+                <span>Estimated Tax (6%)</span>
+                <span>$${tax.toFixed(2)}</span>
+            </div>
         </div>
-        <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
-            <span>Tax (6%)</span>
-            <span>$${tax.toFixed(2)}</span>
-        </div>
-        <hr style="border:0; border-top:1px solid var(--border); margin:12px 0;">
-        <div style="display:flex; justify-content:space-between; margin-bottom:16px; font-weight:700; font-size:1.1rem;">
+        <div class="summary-total">
             <span>Total</span>
-            <span>$${total.toFixed(2)}</span>
+            <span>$${grandTotal.toFixed(2)}</span>
         </div>
-        <a href="checkout-supply.html" class="btn" style="width:100%; text-align:center;">Proceed to Checkout →</a>
+        <a href="checkout-supply.html" class="btn btn-full">
+            Proceed to Checkout
+            <img src="../../assets/arrow.svg" alt="Arrow Right" width="16" height="16">
+        </a>
     `;
 }
 
+//to render checkout page
 function renderCheckoutPage() {
-    const listContainer = document.getElementById('checkout-items-list');
+    const list = document.getElementById('checkout-items-list');
     const totalBox = document.getElementById('checkout-total-box');
-    if (!listContainer || !totalBox) return;
+    if (!list || !totalBox) return;
 
     const cart = getCart();
-    let html = '';
-    let subtotal = 0;
+    if (cart.length === 0) {
+        list.innerHTML = `<li class="empty-item-notice">No items selected in your cart.</li>`;
+        totalBox.innerHTML = `<span>Total Due at Pickup/Checkout:</span><strong>$0.00</strong>`;
+        return;
+    }
+
+    let listHTML = '';
+    let subtotalBuy = 0;
 
     cart.forEach(item => {
+        const isBorrow = item.mode === 'borrow';
         const itemTotal = item.price * item.quantity;
-        subtotal += itemTotal;
-        html += `
-            <li style="display:flex; justify-content:space-between; margin-bottom:8px; font-size:0.95rem;">
-                <span>${item.name} (${item.mode === 'borrow' ? 'Loan' : 'Buy'}) x${item.quantity}</span>
-                <span>$${itemTotal.toFixed(2)}</span>
+        if (!isBorrow) subtotalBuy += itemTotal;
+
+        listHTML += `
+            <li class="checkout-item-row">
+                <div>
+                    <strong>${item.name} (${item.quantity}x)</strong>
+                    <div class="muted-text">
+                        ${isBorrow ? 'Free Loan · Return within 3 days' : 'Store Purchase · Yours to keep'}
+                    </div>
+                </div>
+                <strong>
+                    ${isBorrow ? 'Free Loan ($0.00)' : '$' + itemTotal.toFixed(2)}
+                </strong>
             </li>
         `;
     });
 
-    const tax = subtotal * 0.06;
-    const total = subtotal + tax;
+    const grandTotal = subtotalBuy * 1.06;
 
-    listContainer.innerHTML = html;
+    list.innerHTML = listHTML;
     totalBox.innerHTML = `
-        <span>Total Due:</span>
-        <span>$${total.toFixed(2)}</span>
+        <span>Total Due at Pickup/Checkout:</span>
+        <strong>$${grandTotal.toFixed(2)} <small class="muted-text">(incl. tax)</small></strong>
     `;
+}
+
+// help to determin which page to refresh
+function refreshCartView() {
+    if (document.getElementById('cart-items-container')) {
+        renderCartPage();
+    }
+    if (document.getElementById('checkout-items-list')) {
+        renderCheckoutPage();
+    }
 }
