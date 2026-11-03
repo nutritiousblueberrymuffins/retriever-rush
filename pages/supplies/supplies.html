@@ -5,11 +5,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Student Market · Borrower Home</title>
-    <link rel="stylesheet" href="../../styles.css">
-    <link rel="stylesheet" href="../../indexheader.css">
+    <link rel="stylesheet" href="../../assets/styles.css">
+    <link rel="stylesheet" href="../../assets/indexheader.css">
 </head>
 <body>
-    
+
     <!--navi header-->
     <header>
         <nav>
@@ -30,7 +30,7 @@
     </div>
 
     <main class="container section">
-        
+
         <span class="eyebrow">
             <img src="../../assets/back.svg" alt="Back" width="14" height="14">
             STUDENT MARKET / BORROW
@@ -45,7 +45,7 @@
 
         <!-- navigation toggling -->
         <div class="filter-bar">
-            
+
             <!-- for categories -->
             <div class="button-row">
                 <a href="supplies.html" class="btn">All</a>
@@ -69,7 +69,7 @@
 
         <!-- items on the menu -->
         <div class="catalog-grid">
-            
+
             <!-- scientidic calculator-->
             <div class="catalog-card">
                 <a href="item-calculator.html" class="card-art">
@@ -79,7 +79,7 @@
                 <div class="card-content">
                     <h2><a href="item-calculator.html" class="card-title-link">Scientific Calculator</a></h2>
                     <p>Dual-power scientific calculator for class or exams.</p>
-                    
+
                     <!-- Dual Option Footer -->
                     <div class="card-actions">
                         <div class="action-row">
@@ -107,7 +107,7 @@
                 <div class="card-content">
                     <h2><a href="item-study-kit.html" class="card-title-link">Study Kit</a></h2>
                     <p>A ruler, pens, and reusable study materials in one handy kit.</p>
-                    
+
                     <!-- Dual Option Footer -->
                     <div class="card-actions">
                         <div class="action-row">
@@ -135,9 +135,42 @@
                 <div class="card-content">
                     <h2><a href="item-lab-googles.html" class="card-title-link">Lab Safety Goggles</a></h2>
                     <p>ANSI-certified protective goggles for chemistry and biology labs.</p>
-                    
+
                     <!-- Dual Option Footer -->
                     <div class="card-actions">
                         <div class="action-row">
                             <span class="option-label">Free Loan</span>
-                            <button type="button" onclick="addToCart('goggles',
+                            <button type="button" onclick="addToCart('goggles', 'Lab Safety Goggles', 0.00, 'borrow', '../../assets/goggles.svg')" class="btn btn-secondary btn-sm">
+                                Borrow Free →
+                            </button>
+                        </div>
+                        <div class="action-row">
+                            <span class="price-text">$8.50 to buy</span>
+                            <button type="button" onclick="addToCart('goggles', 'Lab Safety Goggles', 8.50, 'buy', '../../assets/goggles.svg')" class="btn btn-sm">
+                                Buy $8.50
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- the banner at the bottom -->
+        <div class="info-banner">
+            <img src="../../assets/info.svg" alt="Info Icon" width="20" height="20">
+            <span>Borrowing is free in this demo. Collect and return items at the student center desk within 3 days.</span>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>Retriever Rush - UMBC IS 448, Group 8</p>
+    </footer>
+
+    <script src="supply-cart.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', updateCartBadge);
+    </script>
+</body>
+</html>
